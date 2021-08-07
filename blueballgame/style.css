@@ -1,0 +1,18 @@
+.btn-circle.btn-xl { 
+    width: 100px; 
+    height: 100px;  
+    margin: 20px;
+    border-radius: 50px; 
+}
+
+#buttonsDiv{
+    display: none;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+}
+
+#initialDiv{
+    text-align: center;
+    background-color: antiquewhite;
+}

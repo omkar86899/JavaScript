@@ -1,0 +1,21 @@
+<article>
+    <button class="btn btn-success" ng-click='exportCsv()'>Export</button><br><br>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Transaction ID</th>
+                <th>Amount</th>
+                <th>Transaction Type</th>
+                <th>Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat='transaction in viewmodel.transactions'>
+                <td>{{transaction.TransactionId}}</td>
+                <td>{{transaction.Amount}}</td>
+                <td>{{transaction.Type|transactionFilter}}</td>
+                <td>{{transaction.Time}}</td>
+            </tr>
+        </tbody>
+    </table>
+</article>

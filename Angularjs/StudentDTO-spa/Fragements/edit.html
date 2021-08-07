@@ -1,0 +1,27 @@
+<section>
+    <h1><strong>Student Registration Form</strong></h1><br>
+    <form name="form">
+        <label>Roll No: </label>
+        <input type="number" name="rollNo" ng-model="viewmodel.student.rollNo" ng-required='true'>
+        <label ng-show="form.rollNo.$touched&&viewmodel.student.rollNo<1" ng-style="{color:'red'}">
+            Enter value above 0
+        </label><br>
+        <label>Name: </label>
+        <input type="text" ng-model='viewmodel.student.name' ng-required='true'><br>
+        <label>Age: </label>
+        <input type="range" min="1" max="100" ng-model="viewmodel.student.age" ng-required='true'>
+        <label>{{viewmodel.student.age}}</label><br>
+        <label>Email: </label>
+        <input type="email" ng-model='viewmodel.student.email' ng-required='true'><br>
+        <label>Date: </label>
+        <input type="date" ng-model='viewmodel.student.date' ng-required='true'><br>
+        <label>Gender:</label>
+        <input type="radio" name="isMale" ng-model='viewmodel.student.isMale' ng-value=true id="male" ng-required='true'>
+        <label for="male">Male</label>
+        <input type="radio" name="isMale" ng-model='viewmodel.student.isMale' ng-value=false id="female">
+        <label for="female">Female</label><br>
+        <button ng-click="updateStudent()" ng-class="{'spinner':viewmodel.isAddButtonLoading}" class="btn btn-primary"
+            ng-disabled="viewmodel.isAddButtonLoading">Update</button>
+        <label ng-show="viewmodel.isErrorOcurred" ng-style="{color:'red'}">Error Occured</label>
+    </form>
+</section>

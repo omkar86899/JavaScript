@@ -1,0 +1,32 @@
+<section>
+    <div ng-show="students.length==null" style="text-align: center;">
+        <img src="spinner.gif" ng-show="students.length==null">
+    </div>
+    <label ng-show="students.length!=null">Number of Students: {{students.length}}</label><br><br>
+    <table ng-show="students.length!=null" class="table table-hover table-bordered">
+        <tr>
+            <th>ID</th>
+            <th>Roll No</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Email</th>
+            <th>Date</th>
+            <th>Gender</th>
+        </tr>
+        <tr ng-repeat="student in students">
+            <td>{{student.id}}</td>
+            <td>{{student.rollNo}}</td>
+            <td>{{student.name}}</td>
+            <td>{{student.age}}</td>
+            <td>{{student.email}}</td>
+            <td>{{student.date}}</td>
+            <td>{{student.isMale|gender}}</td>
+            <td><button class="btn btn-primary" ng-click="editStudentData(student.id)">Edit</button></td>
+            <td>
+                <button class="btn btn-danger" ng-click="deleteData(student.id)" ng-class="{'spinner':viewmodel.isDeleting}">Delete</button>
+                <label ng-show="viewmodel.isDeleted==false&&viewmodel.deleteOccuredAt==student.id" style="color: red;">error occured</label>
+                <label ng-show="viewmodel.isDeleted==true&&viewmodel.deleteOccuredAt==student.id" style="color: green;">Deleted Successfully</label>
+            </td>
+        </tr>
+    </table>
+</section>

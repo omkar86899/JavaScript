@@ -1,0 +1,27 @@
+<section>
+    <div class="outerDiv">
+        <div class="headerStrip">Product List</div>
+        <div class="filterDiv">
+            <label> Filter By: </label>
+            <input type="text" ng-model='viewmodel.filterString' ng-change='fliterResults()'>
+        </div>
+        <table class="table table-hover">
+            <tr>
+                <th><button class="btn btn-primary" ng-click="toggleImages($event)">Show Images</button></th>
+                <th>Product</th>
+                <th>Code</th>
+                <th>Available</th>
+                <th>Price</th>
+                <th>Star Rating</th>
+            </tr>
+            <tr ng-repeat="product in products" ng-click='loadProduct(product.productCode)' ng-show="!product.isFiltered">
+                <td><img ng-show="viewmodel.showImage" ng-src="{{product.imageUrl}}" style="width: 30px;"></td>
+                <td style="overflow: hidden;">{{product.productName}}</td>
+                <td>{{product.productCode}}</td>
+                <td>{{product.releaseDate}}</td>
+                <td>{{product.price| currency}}</td>
+                <td ng-bind-html="product.starRating|toStars"></td>
+            </tr>
+        </table>
+    </div>
+</section>

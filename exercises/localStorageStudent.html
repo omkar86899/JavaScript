@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="retreiveStudent()">Click Me!</button>
+    <div id = "div1"></div>
+    <script>
+        if (localStorage.student) {
+            var student = {
+                firstName: "omkar",
+                lastName: "bhosale",
+                cgpa: 6.8
+            }
+            localStorage.setItem("student", JSON.stringify(student));
+        }
+        function retreiveStudent(){
+            var student = JSON.parse(localStorage.student);
+            document.getElementById("div1").innerHTML = "First Name: "+student.firstName+"<br>"+"Last Name: "+student.lastName+"<br>"+"CGPA: "+student.cgpa;
+        }
+    </script>
+</body>
+
+</html>

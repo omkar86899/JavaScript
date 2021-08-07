@@ -1,0 +1,11 @@
+h1,form{
+    text-align: center;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+#noOfStudents,#studentTable{
+    display: none;
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="bootstrap.css.map">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body ng-app='main'>
+    <div class="outerDiv" ng-controller='MainController'>
+        <div class="todoDiv col-lg-6 col-md-6 col-sm-12" >
+            <h1><strong>Todo List</strong></h1>
+            <input type="text" ng-model='taskInput'>
+            <button class="btn btn-primary" ng-click='addTaskToList()'>Add</button>
+            <ul>
+                <li ng-repeat='task in taskList track by $index' id={{task.id}} ng-style="taskStyle">{{task.text+" "}}{{task.id|moment}}<button ng-click="strikeTask(task.id)">X</button></li>
+            </ul>
+        </div>
+        <div class="dashboardDiv col-lg-6 col-md-6 col-sm-12">
+            <h1><strong>Dashboard</strong></h1>
+            <label>Last Update: {{lastUpdateTime|date:'medium'}}</label><br><br>
+            <label>Total Items: {{totalItems}}</label><br><br>
+            <button class="btn btn-danger" ng-click="deleteAll()">Delete All</button>
+        </div>
+        <script src="moment.js"></script>
+        <script src="angular.js"></script>
+        <script src="controller.js"></script>
+    </div>
+</body>
+
+</html>

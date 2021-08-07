@@ -1,0 +1,35 @@
+<article>
+    <div class="rectangle">
+        <h1>Registration Form</h1>
+        <form name="registerForm" class="form-group">
+            <label>Username: </label>
+            <input type="text" name="username" class="form-control" ng-model='viewmodel.account.name' required>
+            <label ng-show='registerForm.username.$touched&&viewmodel.account.name.length<5' class="text-danger">
+                Please enter a username with atleast 5 characters
+            </label><br>
+            <label>Email: </label>
+            <input type="email" name="email" class="form-control" ng-model='viewmodel.account.email' required>
+            <label ng-show='registerForm.email.$touched&&viewmodel.account.email.length==0' class="text-danger">
+                Please Enter your email
+            </label><br>
+            <label>Password: </label>
+            <input type="password" name="password" class="form-control" ng-model='viewmodel.account.password' required>
+            <label ng-show='registerForm.password.$touched&&viewmodel.account.password.length<8' class="text-danger">
+                Password should contain atleast 8 characters
+            </label><br>
+            <label>Confirm Password: </label>
+            <input type="password" name="confirmPassword" class="form-control" ng-model='viewmodel.confirmPassword' required>
+            <label ng-show='registerForm.confirmPassword.$touched&&viewmodel.confirmPassword!=viewmodel.account.password' class="text-danger">
+                confirm Password and Password should match
+            </label><br>
+            <label>Balance: </label>
+            <input type="number" name="balance" class="form-control" ng-model='viewmodel.account.balance' required>
+            <label ng-show='registerForm.balance.$touched&&viewmodel.account.balance<500' class="text-danger">
+                Balance should be greater than 500
+            </label>
+            <br>
+            <button class="btn btn-primary" ng-click='register()'>Register</button>
+            <button class="btn btn-danger" ng-click='clear()'>Clear All</button>
+        </form>
+    </div>
+</article>

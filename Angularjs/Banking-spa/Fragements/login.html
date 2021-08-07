@@ -1,0 +1,20 @@
+<article>
+    <div class="rectangle">
+        <h1>Login Form</h1>
+        <form name="loginForm" class="form-group">
+            <label>Username: </label>
+            <input type="text" name="username" class="form-control" ng-model='viewmodel.username' required>
+            <label ng-show='loginForm.username.$touched&&viewmodel.username.length==0' class="text-danger">
+                Please enter Username
+            </label><br>
+            <label>Password: </label>
+            <input type="password" name="password" class="form-control" ng-model='viewmodel.password' required>
+            <label ng-show='loginForm.password.$touched&&viewmodel.password.length==0' class="text-danger">
+                Please enter Password
+            </label><br>
+            <button class="btn btn-primary" ng-click='login()'>Log In</button>
+            <button class="btn btn-danger" ng-click='clear()'>Clear All</button>
+        </form>
+        <label class="alert alert-danger" ng-show='viewmodel.error'>{{viewmodel.error}}</label>
+    </div>
+</article>

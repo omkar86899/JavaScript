@@ -1,0 +1,31 @@
+.outerDiv{
+    text-align: center;
+    margin-top: auto;
+    margin-left: 100px;
+    margin-right: 100px;
+    border-style: groove;
+    border-color: rgb(99, 99, 235);
+    padding: auto;
+}
+
+.logoImage{
+    width: 400px;
+    text-align: center;
+}
+
+.headerStrip{
+    background-color: rgb(99, 99, 235);
+    text-align: left;
+    color: aliceblue;
+    height: 30px;
+    font-size: x-large;
+}
+
+.filterDiv{
+    float: left;
+    margin-top: 10px;
+}
+
+.footerStrip{
+    text-align: left;
+}

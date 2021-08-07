@@ -1,0 +1,22 @@
+<section>
+    <div class="outerDiv">
+        <div class="headerStrip">Product Detail:{{}}</div>
+        <div>
+            <div class="col-lg-6" style="float: left;">
+                <label>Name: {{product.productName}}</label><br>
+                <label>Code: {{product.productCode}}</label><br>
+                <label>Description: {{product.productName}}</label><br>
+                <label>Availability: {{product.releaseDate}}</label><br>
+                <label>Price: {{product.price|currency}}</label><br>
+                <label>Star Rating: </label>
+                <label ng-bind-html="product.starRating|toStars"></label>
+            </div>
+            <div class="col-lg-6" style="float: left;">
+                <img ng-src="{{product.imageUrl}}">
+            </div>
+        </div>
+        <div class="footerStrip">
+            <button ng-click = 'goBack()'>Back</button>
+        </div>
+    </div>
+</section>

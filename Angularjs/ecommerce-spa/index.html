@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../bootstrap.css">
+    <link rel="stylesheet" href="../bootstrap.css.map">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body ng-app='EcommerceSpa'>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#/home">Acme Product Management</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="#/home">Home</a></li>
+                <li><a href="#/productlist">Product List</a></li>
+            </ul>
+        </div>
+    </nav>
+    <section ng-view>
+
+    </section>
+    <script src="../angular.js"></script>
+    <script src="../angular-route.js"></script>
+    <script src="../angular-sanitize.js"></script>
+    <script src="app.js"></script>
+    <script src="services.js"></script>
+    <script src="filters.js"></script>
+    <script src="directives.js"></script>
+    <script src="controllers.js"></script>
+</body>
+
+</html>

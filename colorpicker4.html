@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label>change color: </label>
+    <select id="color" onchange="selectColor()">
+        <option value="#eb3434">#eb3434</option>
+        <option value="#34e1eb">#34e1eb</option>
+        <option value="#77eb34">#77eb34</option>
+    </select>
+    <script>
+        function selectColor(){
+            var color = document.getElementById("color").value;
+            document.body.style.backgroundColor = color;
+        }
+    </script>
+</body>
+</html>

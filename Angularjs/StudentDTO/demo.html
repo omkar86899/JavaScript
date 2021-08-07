@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="bootstrap.css.map">
+</head>
+<body>
+    <input type="date" id="date">
+    <script>
+        document.getElementById("date").addEventListener("input",function(){
+            var date = Date(document.getElementById("date").value);
+            console.log(date);
+        })
+    </script>
+</body>
+</html>

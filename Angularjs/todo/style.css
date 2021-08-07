@@ -1,0 +1,13 @@
+.outerDiv {
+    color: #fff;
+    padding: 5px;
+}
+
+.todoDiv {
+    color: #000;
+}
+
+.dashboardDiv {
+    background-color: #f0e4e4e7;
+    color: #000;
+}

@@ -1,0 +1,30 @@
+<article>
+    <div class="rectangle">
+        <h1>Transaction</h1>
+        <form name="transactionForm" class="form-group">
+            <label>Amount: </label>
+            <input type="text" name="amount" class="form-control" ng-model='viewmodel.transaction.amount'required>
+            <label ng-show='transactionForm.amount.$touched&&viewmodel.transaction.amount<100' class="text-danger">
+                Please enter Amount greater than 100
+            </label>
+            <br>
+            <label>Transaction Type: </label>
+            <br>
+            <label class="radio-inline">
+                <input type="radio" name="transactionType" ng-model="viewmodel.transaction.transactionType" value="D" ng-required=true> Deposit
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="transactionType" ng-model="viewmodel.transaction.transactionType" value="W"> Withdrawl
+            </label>
+            <br><br>
+            <button class="btn btn-primary" ng-click='transact()'>Submit</button>
+            <button class="btn btn-danger" ng-click='clear()'>Clear All</button>
+            <div class="alert alert-success" ng-show='viewmodel.status=="success"'>
+                <strong>Transaction Successful</strong>
+            </div>
+            <div class="alert alert-danger" ng-show='viewmodel.status=="fail"'>
+                <strong>Transaction Unsuccessful</strong>
+            </div>
+        </form>
+    </div>
+</article>
